@@ -36,7 +36,7 @@ app.use(methodOverride('_method'));
 app.engine('ejs',ejsMate);
 app.use(express.static(path.join(__dirname,'public')));
 
-const store = MongoStore({
+const store = new MongoStore({
     mongoUrl: process.env.ATLASDB_URL,
     crypto: {
         secret: process.env.SECRET,
