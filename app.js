@@ -36,13 +36,14 @@ app.use(methodOverride('_method'));
 app.engine('ejs',ejsMate);
 app.use(express.static(path.join(__dirname,'public')));
 
-const store=MongoStore.default.create({
-    mongoUrl:process.env.ATLASDB_URL,
-    crypto:{
-        secret:process.env.SECRET,
+const store = MongoStore({
+    mongoUrl: process.env.ATLASDB_URL,
+    crypto: {
+        secret: process.env.SECRET,
     },
-    touchAfter:24*3600,
+    touchAfter: 24 * 3600,
 });
+
 const sessionOptions={
     store,
     secret:process.env.SECRET,
