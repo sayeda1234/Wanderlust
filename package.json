@@ -2,7 +2,7 @@
   "engines": {
     "node": "22.11.0"
   },
-  "name": "wanderlust",
+  "name": "StayHub",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
